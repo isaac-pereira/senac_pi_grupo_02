@@ -16,7 +16,7 @@
 
 ### Como testar a aplicação:
 
-<strong>Observações: </strong><em>Clone o repositório (ou baixe o .zip desta página e descompacte no seu computador). Caso não tenha o Python 3.8 ou superior no computador, será necessário instalá-lo antes de seguir os passos a seguir.</em>
+<strong>Observações: </strong><em>Clone o repositório (ou baixe o .zip desta página e descompacte no seu computador). Caso não tenha o Python 3.8 ou superior no computador, será necessário instalá-lo antes de seguir os passos abaixo.</em>
 
 1. Instale o `virtualenv` com o comando:
 ```
