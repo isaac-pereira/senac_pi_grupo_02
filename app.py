@@ -17,15 +17,28 @@ class Usuarios(db.Model):
     cpf = db.Column(db.Integer, nullable = True)
     senha = db.Column(db.String(30), nullable=False)
     dt_criacao = db.Column(db.DateTime, default=datetime.utcnow)
+    cep = db.Column(db.Integer, nullable = True)
 
     def __repr__(self):
         return '<Task %r>' % self.id
 
 # Aciona a página (URL) index.html
-@app.route('/')
+@app.route('/', methods=['POST','GET'])
+@app.route('/index.html', methods=['POST','GET'])
 def index():
-    return '<p>index.html</p>'
+    return render_template('index.html')
 
+@app.route('/login.html')
+def login():
+    return render_template('login.html')
+
+@app.route('/cadastro.html')
+def cadastro():
+    return render_template('cadastro.html')
+
+@app.route('/pesquisa.html')
+def pesquisa():
+    return render_template('pesquisa.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
