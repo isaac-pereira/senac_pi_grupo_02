@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/styleLogin.css">
+    <title>Pagina de Login</title>
+</head>
+<body>
+    <header>
+        <div class="conteiner">
+            <div class="menu">
+                <div class="logo">
+                    <img src="./static/img/carrinho-compras.png" alt="icone de um carrinho de compras" />
+                    <span>Meu Mercado</span>
+                </div>
+                <nav id="menu-navegacao">
+                    <ul id="menu-main">
+                        <li><a href="pesquisa.html">Pesquisar um produto</a></li>
+                        <li><a href="pesquisa.html">Procurar um mercado</a></li>
+                        <li><a href="#">Cadastrar um mercado</a></li>
+                        <li><a href="javascript:history.go(-1)">Voltar para a página inicial</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="area-cadastro">
+            <div class="conteiner">
+                <div class="area-login">
+                    <h2>Digite seu email de usuario e cpf abaixo</h2>
+                    <div class="area-form">
+                        <form action="GET" id="formulario">
+                            <div class="area-input">
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" id="txtemail" placeholder="Digite seu email aqui...">
+                            </div>
+                            <br />
+                            <div class="area-input">
+                                <label for="cpf">CPF: </label>
+                                <input type="number" name="cpf" id="txtcpf" placeholder="Digite seu cpf aqui...">
+                            </div>
+                            <br />
+                            <div class="sub">
+                                <button type="Enviar" id="enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="area-links">
+                        <p class="client">Caso você seja um cliente e nao tenha um conta, <a href="cadastro.html">clique aqui</a></p>
+                        <p class="mercado">Caso você seja representante de um mercado e nao tenha um conta, <a href="#">clique aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

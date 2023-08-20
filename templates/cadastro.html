@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/styleCadastro.css" />
+    <title>Cadastro de cliente</title>
+</head>
+<body>
+    <header>
+        <div class="conteiner">
+            <div class="menu">
+                <div class="logo">
+                    <img src="./static/img/carrinho-compras.png" alt="icone de um carrinho de compras" />
+                    <span>Meu Mercado</span>
+                </div>
+                <nav id="menu-navegacao">
+                    <ul id="menu-main">
+                        <li><a href="pesquisa.html">Pesquisar um produto</a></li>
+                        <li><a href="pesquisa.html">Procurar um mercado</a></li>
+                        <li><a href="#">Cadastrar um mercado</a></li>
+                        <li><a href="javascript:history.go(-2)">Voltar para a página inicial</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="section-cadastro">
+            <div class="conteiner">
+                <div class="section-cadastro--login">
+                    <div class="section-cadastro--info">
+                        <h1>Para se cadastra basta preencher as informações abaixo</h1>
+                        <p>Buscamos ajudar os clientes a econtrarem produtos por um
+                            preço acessivel e localizar mercados próximos ao seu endereço. 
+                            Também enviamos ao email das pessoas as promoções sempre 
+                            que elas lançam, informando o mercado e o prazo que ela 
+                            estara disponivel</p>
+                    </div>
+                    <div class="section-cadastro--form">
+                        <form action="GET" id="formulario">
+                            <div class="section-cadastro--input">
+                                <label for="nome">Nome</label>
+                                <input type="text" name="nome" id="txtnome" placeholder="Digite seu nome aqui...">
+                            </div>
+
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" id="txtemail" placeholder="Digite seu email aqui...">
+                            </div>
+                            
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                <label for="cpf">CPF: </label>
+                                <input type="number" name="cpf" id="txtcpf" placeholder="Digite seu cpf aqui...">
+                            </div>
+
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                <label for="cep">Cep</label>
+                                <input type="number" name="cep" id="txtcep" placeholder="Digite seu cep aqui...">
+                            </div>
+
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                <label for="senha">Senha</label>
+                                <input type="password" name="senha" id="txtsenha" placeholder="Digite sua senha aqui...">
+                            </div>
+                            <br />
+                            <div class="sub">
+                                <button type="Enviar" id="enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="area-links">
+                        <p class="client">Caso você ja tenha um conta, <a href="login.html">clique aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
