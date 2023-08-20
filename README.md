@@ -12,11 +12,11 @@
 <br>Tiago Gomes da Silva</p>
 
 ### Descrição:
-<p>Este aplicativo web foi desenvolvido com as tecnologias/linguagens (principais): HTML, CSS, Flask, SQLite3 e Python 3.10.12.</p>
+<p>Este aplicativo web foi desenvolvido com as tecnologias/linguagens (principais): HTML, CSS, Flask, SQLite3 e Python 3.10.</p>
 
 ### Como testar a aplicação:
 
-<strong>Observação: </strong><em>caso não tenha o Python 3.8 ou superior no computador, será necessário instalá-lo antes de seguir os passos a seguir.</em>
+<strong>Observações: </strong><em>Clone o repositório (ou baixe o .zip desta página e descompacte no seu computador). Caso não tenha o Python 3.8 ou superior no computador, será necessário instalá-lo antes de seguir os passos a seguir.</em>
 
 1. Instale o `virtualenv` com o comando:
 ```
