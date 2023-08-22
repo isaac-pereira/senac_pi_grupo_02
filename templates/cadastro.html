@@ -39,7 +39,7 @@
                             estará disponível</p>
                     </div>
                     <div class="section-cadastro--form">
-                        <form action="GET" id="formulario">
+                        <form method="POST" action="{{ url_for('cadastro') }}" id="formulario">
                             <div class="section-cadastro--input">
                                 <label for="nome">Nome</label>
                                 <input type="text" name="nome" id="txtnome" placeholder="Digite seu nome aqui...">
@@ -74,7 +74,7 @@
                             </div>
                             <br />
                             <div class="sub">
-                                <button type="Enviar" id="enviar">Enviar</button>
+                                <button type="submit" id="enviar">Enviar</button>
                             </div>
                         </form>
                     </div>

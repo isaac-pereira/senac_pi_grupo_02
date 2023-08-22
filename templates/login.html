@@ -32,7 +32,7 @@
                 <div class="area-login">
                     <h2>Digite seu email de usuario e cpf abaixo</h2>
                     <div class="area-form">
-                        <form action="GET" id="formulario">
+                        <form method='POST' action="{{ url_for('login') }}" id="formulario">
                             <div class="area-input">
                                 <label for="email">E-mail</label>
                                 <input type="email" name="email" id="txtemail" placeholder="Digite seu email aqui...">

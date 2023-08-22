@@ -13,8 +13,8 @@ db.init_app(app)
 class Usuarios(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    cpf = db.Column(db.Integer, nullable = True)
+    email = db.Column(db.String(100), nullable=False, unique=True)
+    cpf = db.Column(db.Integer, nullable = True, unique=True)
     senha = db.Column(db.String(30), nullable=False)
     dt_criacao = db.Column(db.DateTime, default=datetime.utcnow)
     cep = db.Column(db.Integer, nullable = True)
@@ -28,15 +28,27 @@ class Usuarios(db.Model):
 def index():
     return render_template('index.html')
 
-@app.route('/login.html')
+@app.route('/login.html', methods=['POST','GET'])
 def login():
     return render_template('login.html')
 
-@app.route('/cadastro.html')
+@app.route('/cadastro.html', methods=['POST','GET'])
 def cadastro():
+    if request.method == 'POST':
+        usuario = Usuarios(
+            nome=request.form['nome'],
+            email=request.form['email'],
+            cpf=request.form['cpf'],
+            senha=request.form['senha'],
+            cep=request.form['cep']
+        )
+        db.session.add(usuario)
+        db.session.commit()
+        return redirect(url_for('pesquisa', id=usuario.id))
+
     return render_template('cadastro.html')
 
-@app.route('/pesquisa.html')
+@app.route('/pesquisa.html', methods=['POST','GET'])
 def pesquisa():
     return render_template('pesquisa.html')
 
