@@ -16,10 +16,10 @@
                 </div>
                 <nav id="menu-navegacao">
                     <ul id="menu-main">
-                        <li><a href="pesquisa.html">Pesquisar um produto</a></li>
-                        <li><a href="pesquisa.html">Procurar um mercado</a></li>
+                        <li><a href={{ url_for('pesquisa') }}>Pesquisar um produto</a></li>
+                        <li><a href={{ url_for('pesquisa') }}>Procurar um mercado</a></li>
                         <li><a href="#">Cadastrar um mercado</a></li>
-                        <li><a href="index.html">Voltar para a página inicial</a></li>
+                        <li><a href={{ url_for('index') }}>Voltar para a página inicial</a></li>
                     </ul>
                 </nav>
             </div>
@@ -49,7 +49,7 @@
                         </form>
                     </div>
                     <div class="area-links">
-                        <p class="client">Caso você seja um cliente e nao tenha um conta, <a href="cadastro.html">clique aqui</a></p>
+                        <p class="client">Caso você seja um cliente e nao tenha um conta, <a href={{ url_for('cadastro') }}>clique aqui</a></p>
                         <p class="mercado">Caso você seja representante de um mercado e nao tenha um conta, <a href="#">clique aqui</a></p>
                     </div>
                 </div>
