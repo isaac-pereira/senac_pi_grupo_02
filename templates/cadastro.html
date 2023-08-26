@@ -39,47 +39,48 @@
                             estará disponível</p>
                     </div>
                     <div class="section-cadastro--form">
-                        <form method="POST" action="{{ url_for('cadastro') }}" id="formulario">
+                        <form method="POST" action="/cadastro" id="formulario">
+                            {{ form.hidden_tag() }}
                             <div class="section-cadastro--input">
-                                <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="txtnome" placeholder="Digite seu nome aqui...">
+                                {{ form.nome.label }}
+                                {{ form.nome }}
                             </div>
 
                             <br />
 
                             <div class="section-cadastro--input">
-                                <label for="email">E-mail</label>
-                                <input type="email" name="email" id="txtemail" placeholder="Digite seu email aqui...">
+                                {{ form.email.label }}
+                                {{ form.email }}
                             </div>
                             
                             <br />
 
                             <div class="section-cadastro--input">
-                                <label for="cpf">CPF: </label>
-                                <input type="number" name="cpf" id="txtcpf" placeholder="Digite seu cpf aqui...">
+                                {{ form.cpf.label }}
+                                {{ form.cpf }}
                             </div>
 
                             <br />
 
                             <div class="section-cadastro--input">
-                                <label for="cep">CEP</label>
-                                <input type="number" name="cep" id="txtcep" placeholder="Digite seu cep aqui...">
+                                {{ form.cep.label }}
+                                {{ form.cep }}
                             </div>
 
                             <br />
 
                             <div class="section-cadastro--input">
-                                <label for="senha">Senha</label>
-                                <input type="password" name="senha" id="txtsenha" placeholder="Digite sua senha aqui...">
+                                {{ form.senha.label }}
+                                {{ form.senha }}
                             </div>
                             <br />
                             <div class="sub">
-                                <button type="submit" id="enviar">Enviar</button>
+                                {{ form.submit(id='enviar') }}
                             </div>
                         </form>
                     </div>
                     <div class="area-links">
-                        <p class="client">Caso você ja tenha um conta, <a href={{ url_for('login')}}>clique aqui</a></p>
+                        <p class="client">Caso você ja tenha um conta, <a href={{ url_for('login') }}>clique aqui</a></p>
                     </div>
                 </div>
             </div>
