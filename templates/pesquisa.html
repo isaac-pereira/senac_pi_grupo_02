@@ -17,13 +17,13 @@
                 <div class="pesquisa">
                     <input type="text" placeholder="Digite aqui o produto que procura" />
                 </div>
-                <div class="login">
+                <div class="login" title="Pressione para realizar o logout">
                     <a href="#">
                         <img src="./static/img/img-user.png" alt="icone de um usuario" />
-                        <a href={{ url_for('login') }}>Entrar</a>
+                        <a href="{{ url_for('logout') }}">Olá, {{ nome }}!</a>
                         <span>&gt;</span>
                     </a>
-                </div>
+                </div>                
             </div>
         </div>
     </header>

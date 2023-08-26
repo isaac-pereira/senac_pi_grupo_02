@@ -16,10 +16,10 @@
                 </div>
                 <nav id="menu-navegacao">
                     <ul id="menu-main">
-                        <li><a href={{ url_for('pesquisa') }}>Pesquisar um produto</a></li>
-                        <li><a href={{ url_for('pesquisa') }}>Procurar um mercado</a></li>
+                        <li><a href="{{ url_for('pesquisa') }}">Pesquisar um produto</a></li>
+                        <li><a href="{{ url_for('pesquisa') }}">Procurar um mercado</a></li>
                         <li><a href="#">Cadastrar um mercado</a></li>
-                        <li><a href={{ url_for('index') }}>Voltar para a página inicial</a></li>
+                        <li><a href="{{ url_for('index') }}">Voltar para a página inicial</a></li>
                     </ul>
                 </nav>
             </div>
@@ -30,26 +30,27 @@
         <section id="area-cadastro">
             <div class="conteiner">
                 <div class="area-login">
-                    <h2>Digite seu email de usuario e cpf abaixo</h2>
+                    <h2>Digite seu email de e-mail e senha abaixo</h2>
                     <div class="area-form">
-                        <form method='POST' action="{{ url_for('login') }}" id="formulario">
+                        <form method='POST' action="/login" id="formulario">
+                            {{ form.hidden_tag() }}
                             <div class="area-input">
-                                <label for="email">E-mail</label>
-                                <input type="email" name="email" id="txtemail" placeholder="Digite seu email aqui...">
+                                {{ form.email.label }}
+                                {{ form.email }}
                             </div>
                             <br />
                             <div class="area-input">
-                                <label for="cpf">CPF: </label>
-                                <input type="number" name="cpf" id="txtcpf" placeholder="Digite seu cpf aqui...">
+                                {{ form.senha.label }}
+                                {{ form.senha }}
                             </div>
                             <br />
                             <div class="sub">
-                                <button type="Enviar" id="enviar">Enviar</button>
+                                {{ form.submit(id='enviar') }}
                             </div>
                         </form>
                     </div>
                     <div class="area-links">
-                        <p class="client">Caso você seja um cliente e nao tenha um conta, <a href={{ url_for('cadastro') }}>clique aqui</a></p>
+                        <p class="client">Caso você seja um cliente e nao tenha um conta, <a href="{{ url_for('cadastro') }}">clique aqui</a></p>
                         <p class="mercado">Caso você seja representante de um mercado e nao tenha um conta, <a href="#">clique aqui</a></p>
                     </div>
                 </div>

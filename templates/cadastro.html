@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href={{ url_for('static', filename='/css/styleCadastro.css') }}/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styleCadastro.css') }}"/>
     <title>Cadastro de cliente</title>
 </head>
 <body>
@@ -16,10 +16,10 @@
                 </div>
                 <nav id="menu-navegacao">
                     <ul id="menu-main">
-                        <li><a href={{ url_for('pesquisa') }}>Pesquisar um produto</a></li>
-                        <li><a href={{ url_for('pesquisa') }}>Procurar um mercado</a></li>
+                        <li><a href="{{ url_for('pesquisa') }}">Pesquisar um produto</a></li>
+                        <li><a href="{{ url_for('pesquisa') }}">Procurar um mercado</a></li>
                         <li><a href="#">Cadastrar um mercado</a></li>
-                        <li><a href={{ url_for('index') }}>Voltar para a página inicial</a></li>
+                        <li><a href="{{ url_for('index') }}">Voltar para a página inicial</a></li>
                     </ul>
                 </nav>
             </div>
@@ -80,7 +80,7 @@
                         </form>
                     </div>
                     <div class="area-links">
-                        <p class="client">Caso você ja tenha um conta, <a href={{ url_for('login') }}>clique aqui</a></p>
+                        <p class="client">Caso você ja tenha um conta, <a href="{{ url_for('login') }}">clique aqui</a></p>
                     </div>
                 </div>
             </div>
