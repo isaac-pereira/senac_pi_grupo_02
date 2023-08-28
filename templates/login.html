@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/styleLogin.css">
+    <title>Pagina de Login</title>
+</head>
+<body>
+    <header>
+        <div class="conteiner">
+            <div class="menu">
+                <div class="logo">
+                    <img src="./static/img/carrinho-compras.png" alt="icone de um carrinho de compras" />
+                    <span>Meu Mercado</span>
+                </div>
+                <nav id="menu-navegacao">
+                    <ul id="menu-main">
+                        <li><a href="{{ url_for('pesquisa') }}">Pesquisar um produto</a></li>
+                        <li><a href="{{ url_for('pesquisa') }}">Procurar um mercado</a></li>
+                        <li><a href="#">Cadastrar um mercado</a></li>
+                        <li><a href="{{ url_for('index') }}">Voltar para a página inicial</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburguer">
+                    <img src="../static/img/hamburguer.png" alt="" class="open-img" />
+                    <img src="../static/img/close-icon.png" alt="" class="close-img" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="area-cadastro">
+            <div class="conteiner">
+                <div class="area-login">
+                    <h2>Digite seu email de e-mail e senha abaixo</h2>
+                    <div class="area-form">
+                        <form method='POST' action="/login" id="formulario">
+                            {{ form.hidden_tag() }}
+                            <div class="area-input">
+                                {{ form.email.label }}
+                                {{ form.email }}
+                            </div>
+                            <br />
+                            <div class="area-input">
+                                {{ form.senha.label }}
+                                {{ form.senha }}
+                            </div>
+                            <br />
+                            <div class="sub">
+                                {{ form.submit(id='enviar') }}
+                            </div>
+                        </form>
+                    </div>
+                    <div class="area-links">
+                        <p class="client">Caso você seja um cliente e nao tenha um conta, <a href="{{ url_for('cadastro') }}">clique aqui</a></p>
+                        <p class="mercado">Caso você seja representante de um mercado e nao tenha um conta, <a href="#">clique aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../static/js/scriptLogin.js"></script>
+</body>
+</html>
