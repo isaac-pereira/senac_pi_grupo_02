@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/stylePesquisa.css" />
+    <title>Pesquisar Produto</title>
+</head>
+<body>
+    <header>
+        <div class="conteiner">
+            <div class="menu">
+                <div class="logo">
+                    <div class="icon-logo">
+                        <img src="./static/img/carrinho-compras.png" alt="icone de um carrinho de compras" />
+                        <span>Meu Mercado</span>
+                    </div>
+                    <div class="hamburguer">
+                        <img src="../static/img/hamburguer.png" alt="" class="open-img" />
+                        <img src="../static/img/close-icon.png" alt="" class="close-img" />
+                    </div>
+                </div>
+                <div class="pesquisa">
+                    <input type="text" placeholder="Digite aqui o produto que procura" />
+                </div>
+                <div class="login" title="Pressione para realizar o logout">
+                    <a href="#">
+                        <img src="./static/img/img-user.png" alt="icone de um usuario" />
+                        <a href="{{ url_for('logout') }}">Olá, {{ nome }}!</a>
+                        <span>&gt;</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="section-categoria">
+                <div class="section-categoria--iten">
+                    <img src="./static/img/img-location.png" alt="icone de localizaço" />
+                    <div class="part-column">
+                        <span>000001-00</span>
+                        <span>Promo ao bairro</span>
+                    </div>
+                </div>
+
+                <div class="section-categoria--iten">
+                    <img src="./static/img/hamburguer.png" alt="icone de localizaço" />
+                    <span>Ver categoria</span>
+                </div>
+
+                <div class="section-categoria--iten">
+                    <img src="./static/img/img--oferta.jpeg" alt="icone de localizaço" />
+                    <span>Oferta</span>
+                </div>
+
+                <div class="section-categoria--iten">
+                    <img src="./static/img/img-garrafa.jpeg" alt="icone de localizaço" />
+                    <span>Bebida</span>
+                </div>
+
+                <div class="section-categoria--iten">
+                    <img src="./static/img/img-cenoura.jpeg" alt="icone de localizaço" />
+                    <span>Hortfruit</span>
+                </div>
+
+                <div class="section-categoria--iten">
+                    <img src="./static/img/img-estrela.jpg" alt="icone de localizaço" />
+                    <span>Meus favoritos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="part-pesquisa">
+            <div class="conteiner">
+                <div class="conteiner-pesquisa">
+                    <div class="conteiner-pesquisa--iten">
+                        <div class="conteiner-pesquisa--img">
+                            <img src="../static/img/rfrí.jpeg" alt="">
+                        </div>
+                        <div class="conteiner-pesquisa--iten-info">
+                            <div class="style-normal  conteiner-pesquisa--iten-info--preco">
+                                <p>Coca-cola 250ml</p>
+                                <span class="valor">R$ 3,40</span>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--mercado">
+                                <img src="../static/img/tanogosto.png" alt="">
+                                <p>Mercado Ta Mo Gosto</p>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--promocao">
+                                <p>Promoçao: <span class="promo">Leve 3 Pague 2</span></p>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--setting">
+                                <div class="setting-sv">
+                                    <img src="../static/img/img-estrela.jpg" alt="">
+                                    <span>Salvar nos favoritos</span>
+                                </div>
+                               <!-- <img src="../static/img/img-estrela.jpg" alt="">
+                               <span>Salvar nos favoritos</span>  -->
+                               <span class="btn-setting">agendar um</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conteiner-pesquisa--iten">
+                        <div class="conteiner-pesquisa--img">
+                            <img src="../static/img/rfrí.jpeg" alt="">
+                        </div>
+                        <div class="conteiner-pesquisa--iten-info">
+                            <div class="style-normal  conteiner-pesquisa--iten-info--preco">
+                                <p>Coca-cola 250ml</p>
+                                <span class="valor">R$ 3,40</span>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--mercado">
+                                <img src="../static/img/iten-tanogosto.png" alt="">
+                                <p>Mercado Ta Mo Gosto</p>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--promocao">
+                                <p>Promoçao: <span class="promo">Leve 3 Pague 2</span></p>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--setting">
+                                <div class="setting-sv">
+                                    <img src="../static/img/img-estrela.jpg" alt="">
+                                    <span>Salvar nos favoritos</span>
+                                </div>
+                               <span class="btn-setting">agendar um</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="conteiner-pesquisa--iten">
+                        <div class="conteiner-pesquisa--img">
+                            <img src="../static/img/rfrí.jpeg" alt="">
+                        </div>
+                        <div class="conteiner-pesquisa--iten-info">
+                            <div class="style-normal  conteiner-pesquisa--iten-info--preco">
+                                <p>Coca-cola 250ml</p>
+                                <span class="valor">R$ 3,40</span>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--mercado">
+                                <img src="../static/img/iten-tanogosto.png" alt="">
+                                <p>Mercado Ta Mo Gosto</p>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--promocao">
+                                <p>Promoçao: <span class="promo">Leve 3 Pague 2</span></p>
+                            </div>
+
+                            <div class="style-normal conteiner-pesquisa--iten-info--setting">
+                                <div class="setting-sv">
+                                    <img src="../static/img/img-estrela.jpg" alt="">
+                                    <span>Salvar nos favoritos</span>
+                                </div>
+                               <span class="btn-setting">agendar um</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../static/js/scriptPesquisa.js"></script>
+</body>
+</html>
