@@ -84,8 +84,23 @@
                         </form>
                     </div>
                     <div class="area-links">
-                        <p class="client">Caso você ja tenha um conta, <a href={{ url_for('login')}}>clique aqui</a></p>
+                        <p class="client">Caso você ja tenha um conta, <a href="{{ url_for('login')}}">clique aqui</a></p>
                     </div>
+
+                    {% for error in form.email.errors %}
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                {{ error }}
+                        </div>
+                    {% endfor %}
+
+                    {% for error in form.cpf.errors %}
+                        <div class="alert">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                {{ error }}
+                        </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </section>

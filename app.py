@@ -1,5 +1,5 @@
 # Importa bibliotecas 
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
@@ -76,6 +76,12 @@ def login():
             if bcrypt.check_password_hash(user.senha, form.senha.data):
                 login_user(user)
                 return redirect(url_for('pesquisa'))
+            else:
+                flash('E-mail e/ou senha incorretos!')
+                return redirect(url_for('login'))
+        else:
+            flash('E-mail e/ou senha incorretos!')
+            return redirect(url_for('login'))
             
     return render_template('login.html', form=form)
 
