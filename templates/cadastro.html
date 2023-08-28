@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styleCadastro.css') }}"/>
+    <title>Cadastro de cliente</title>
+</head>
+<body>
+    <header>
+        <div class="conteiner">
+            <div class="menu">
+                <div class="logo">
+                    <img src="./static/img/carrinho-compras.png" alt="icone de um carrinho de compras" />
+                    <span>Meu Mercado</span>
+                </div>
+                <nav id="menu-navegacao">
+                    <ul id="menu-main">
+                        <li><a href="{{ url_for('pesquisa') }}">Pesquisar um produto</a></li>
+                        <li><a href="{{ url_for('pesquisa') }}">Procurar um mercado</a></li>
+                        <li><a href="#">Cadastrar um mercado</a></li>
+                        <li><a href="{{ url_for('index') }}">Voltar para a página inicial</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburguer">
+                    <img src="../static/img/hamburguer.png" alt="" class="open-img" />
+                    <img src="../static/img/close-icon.png" alt="" class="close-img" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="section-cadastro">
+            <div class="conteiner">
+                <div class="section-cadastro--login">
+                    <div class="section-cadastro--info">
+                        <h1>Para se cadastrar, basta preencher as informações abaixo</h1>
+                        <p>Buscamos ajudar os clientes a econtrar produtos por um
+                            preço acessível e localizar mercados próximos ao seu endereço. 
+                            Também enviamos por e-mail as promoções sempre 
+                            que elas são lançadas, informando o mercado e o prazo em que ela 
+                            estará disponível</p>
+                    </div>
+                    <div class="section-cadastro--form">
+                        <form method="POST" action="/cadastro" id="formulario">
+                            {{ form.hidden_tag() }}
+                            <div class="section-cadastro--input">
+                                {{ form.nome.label }}
+                                {{ form.nome }}
+                            </div>
+
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                {{ form.email.label }}
+                                {{ form.email }}
+                            </div>
+                            
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                {{ form.cpf.label }}
+                                {{ form.cpf }}
+                            </div>
+
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                {{ form.cep.label }}
+                                {{ form.cep }}
+                            </div>
+
+                            <br />
+
+                            <div class="section-cadastro--input">
+                                {{ form.senha.label }}
+                                {{ form.senha }}
+                            </div>
+                            <br />
+                            <div class="section-cadastro--input">
+                                {{ form.submit(id='enviar') }}
+                            </div>
+                        </form>
+                    </div>
+                    <div class="area-links">
+                        <p class="client">Caso você ja tenha um conta, <a href={{ url_for('login')}}>clique aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../static/js/scriptCadastro.js"></script>
+</body>
+</html>
