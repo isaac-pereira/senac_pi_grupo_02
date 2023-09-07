@@ -4,7 +4,7 @@
 
 ## Disciplina: Projeto Integrador
 
-### Grupo:
+### Grupo 02:
 <p>Isaac Elias Severino Pereira
 <br>Luiz Miguel Andrade de Souza
 <br>Miguel Angelo Santana de Almeida
