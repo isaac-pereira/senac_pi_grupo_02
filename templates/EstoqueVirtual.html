@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./static/css/styleEstoque.css">
+	<title>Estoque virtual</title>
+</head>
+<body>
+		<header class="header">
+			<div class="conteiner">
+				<div class="menu">
+					<div class="logo">
+						<img src="../static/img/img-carrinho-compras.png">
+						<span>Meu Mercao</span>
+					</div>
+					<nav id="menuMain">
+						<ul id="list-main">
+							<li>Venas</li>
+							<li>Estoque</li>
+							<li>Funcionarios</li>
+						</ul>
+					</nav>
+					<div id="hamburguer">
+                        <img src="../static/img/hamburguer.png" alt="" class="open" />
+                        <img src="../static/img/close-icon.png" alt="" class="close" />
+                    </div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section id="pesquisar">
+				<div class="conteiner">
+					<div class="section-body">
+						<div class="qtd-items">
+							<span class="num-items">items()</span>
+						</div>
+						<div class="pesquisa">
+	                    	<input type="text" placeholder="Digite aqui o produto que procura" />
+	                	</div>
+	                	<div class="Order">
+	                    	<span>Ordernr por</span>
+	                	</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="links">
+				<div class="conteiner">
+					<div class="conteiner-links">
+						<div class="link">
+							<span class="link-style"><a href="EstoqueVirtual.html">Produtos no estoque</a></span>
+						</div>
+						<div class="link">
+							<span class="link-style"><a href="AdicionarProduto.html">Adicionar produto</a></span>
+						</div>
+						<div class="link">
+							<span class="link-style"><a>Produtos por venda</a></span>
+						</div>
+						<div class="link">
+							<span class="link-style"><a>Produtos por quatidade</a></span>
+						</div>
+						<div class="link">
+							<span class="link-style"><a>Produtos por vencimento</a></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="nome">
+				<h1>Produtos no estoque</h1>
+			</section>
+
+			<section id="produtos">
+				<table class="table table-bordered table-striped">
+			        <thead class="thead-dark">
+			            <tr>
+			                <th scope="col">ID</th>
+			                <th scope="col">Nome</th>
+			                <th scope="col">Valor do Produto</th>
+			                <th scope="col">Vencimento</th>
+			                <th scope="col">Quantidade</th>
+			                <th scope="col">Status</th>
+			                <th scope="col">ALTERAR</th>
+			                <th scope="col">REMOVER</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			        	<tr>
+			        		<!-- <th></th> -->
+			        	</tr>
+			        </tbody>
+   	 			</table>
+			</section>
+		</main>
+
+		<script src="../static/js/EstoqueVirtualScript.js"></script>
+</body>
+</html>

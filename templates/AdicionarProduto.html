@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="./static/css/AdicionarProduto.css" />
+	<title>Adicionar produto</title>
+</head>
+<body>
+	<header>
+		<section id="links">
+			<div class="conteiner">
+				<div class="conteiner-links">
+					<div class="link">
+						<span class="link-style"><a href="EstoqueVirtual.html">Produtos no estoque</a></span>
+					</div>
+					<div class="link">
+						<span class="link-style"><a href="AdicionarProduto.html">Adicionar produto</a></span>
+					</div>
+					<div class="link">
+						<span class="link-style"><a href="#">Produtos por venda</a></span>
+					</div>
+					<div class="link">
+						<span class="link-style"><a href="#">Produtos por qntd</a></span>
+					</div>
+					<div class="link">
+						<span class="link-style"><a href="#">Produtos por venc</a></span>
+					</div>
+				</div>
+				<div id="hamburguer">
+                    <img src="../static/img/hamburguer.png" alt="" class="open" />
+                    <img src="../static/img/close-icon.png" alt="" class="close" />
+                </div>
+			</div>
+		</section>
+	</header>
+
+	<main>
+		<section id="nome">
+			<h1>Produtos no estoque</h1>
+		</section>
+
+		<section id="formProdutos">
+			<div class="conteiner">
+				<div class="conteiner-form">
+					<form method="POST" id="formulario">
+						<div class="input-text">
+							<label>Nome do produto:</label>
+							<input type="text" id="name" class="form-control" placeholder="digite o nome do produto" required />
+						</div>
+						<div class="input-text">
+							<label>Valor do produto:</label>
+							<input type="number" id="valor" class="form-control" placeholder="digite o preço do produto" required />
+						</div>
+						<div class="input-text">
+							<label>Vencimento do produto:</label>
+							<input type="date" id="date" class="form-control" placeholder="digite a data do vencimento do produto" required />
+						</div>
+						<div class="input-text">
+							<label>Quantidade do disponivel:</label>
+							<input type="number" id="qtd" class="form-control" placeholder="digite a quantidade disponovel para venda" required />
+						</div>
+					</form>
+				</div>
+
+				<div class="btns">
+					<button><a>Confirmar</a></button>
+					<button><a href="EstoqueVirtual.html">Voltar</a></button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="../static/js/scriptProduto.js"></script>
+</body>
+</html>
