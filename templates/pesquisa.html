@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/css/stylePesquisa.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylePesquisa.css') }}" />
     <title>Pesquisar Produto</title>
 </head>
 <body>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="section-categoria--iten">
-                    <img src="./static/img/img-cenoura.jpeg" alt="icone de localizaço" />
+                    <img style="width:15px;" src="./static/img/img-cenoura.jpeg" alt="icone de localizaço" />
                     <span>Hortfruit</span>
                 </div>
 
@@ -220,6 +220,6 @@
             </div>
         </div>
     </footer>
-    <script src="../static/js/scriptPesquisa.js"></script>
+    <script src="{{ url_for('static', filename='js/scriptPesquisa.js') }}"></script>
 </body>
 </html>

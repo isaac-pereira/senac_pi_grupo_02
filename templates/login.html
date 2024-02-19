@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/css/styleLogin.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleLogin.css') }}">
     <title>Pagina de Login</title>
 </head>
 <body>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="area-links">
                         <p class="client">Caso você seja um cliente e nao tenha um conta, <a href="{{ url_for('cadastro') }}">clique aqui</a></p>
-                        <p class="mercado">Caso você seja representante de um mercado e nao tenha um conta, <a href="#">clique aqui</a></p>
+                        <p class="mercado">Caso você seja representante de um mercado e nao tenha um conta, <a href="{{ url_for('cadastro_pj') }}">clique aqui</a></p>
                     </div>
                     
                     {% with messages = get_flashed_messages() %}
@@ -74,6 +74,6 @@
         </section>
     </main>
 
-    <script src="../static/js/scriptLogin.js"></script>
+    <script src="{{ url_for('static', filename='js/scriptLogin.js') }}"></script>
 </body>
 </html>

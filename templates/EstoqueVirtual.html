@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="./static/css/styleEstoque.css">
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/styleEstoque.css') }}">
 	<title>Estoque virtual</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 					</div>
 					<nav id="menuMain">
 						<ul id="list-main">
-							<li>Venas</li>
+							<li>Vendas</li>
 							<li>Estoque</li>
 							<li>Funcionarios</li>
 						</ul>
@@ -50,10 +50,10 @@
 				<div class="conteiner">
 					<div class="conteiner-links">
 						<div class="link">
-							<span class="link-style"><a href="EstoqueVirtual.html">Produtos no estoque</a></span>
+							<span class="link-style"><a href="{{ url_for('estoque', user=current_user) }}">Produtos no estoque</a></span>
 						</div>
 						<div class="link">
-							<span class="link-style"><a href="AdicionarProduto.html">Adicionar produto</a></span>
+							<span class="link-style"><a href="{{ url_for('adiciona_produto', user=current_user) }}">Adicionar produto</a></span>
 						</div>
 						<div class="link">
 							<span class="link-style"><a>Produtos por venda</a></span>
@@ -85,6 +85,20 @@
 			                <th scope="col">ALTERAR</th>
 			                <th scope="col">REMOVER</th>
 			            </tr>
+						{% for produto in user.prod_lojista %}
+						<tr>
+							<td>{{ produto.id }}</td>
+							<td>{{ produto.nome_produto }}</td>
+							<td>{{ produto.preco }}</td>
+							<td>{{ produto.vencimento }}</td>
+							<td>{{ produto.quantidade }}</td>
+							<td>-</td>
+							<td>-</td>
+							<td>
+								<button type="button" class="btn-close" onClick="deleteProduto({{ produto.id }})"><span aria-hidden="true">&times;</span></button>
+							</td>
+						</tr>
+						{% endfor %}
 			        </thead>
 			        <tbody>
 			        	<tr>
@@ -95,6 +109,17 @@
 			</section>
 		</main>
 
-		<script src="../static/js/EstoqueVirtualScript.js"></script>
+		<script src="{{ url_for('static', filename='js/EstoqueVirtualScript.js') }}"></script>
+		
+		<script type="text/javascript">
+			function deleteProduto(produtoId) {
+				fetch("/delete-produto", {
+					method: "POST",
+					body: JSON.stringify({ produtoId: produtoId }),
+				}).then((_res) => {
+					window.location.href = "/estoque";
+				});
+			}
+		</script>
 </body>
 </html>
