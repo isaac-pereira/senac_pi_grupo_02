@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylePesquisa.css') }}" />
     <title>Pesquisar Produto</title>
 </head>
+
 <body>
     <header>
         <div class="conteiner">
@@ -100,9 +102,9 @@
                                     <img src="../static/img/img-estrela.jpg" alt="">
                                     <span>Salvar nos favoritos</span>
                                 </div>
-                               <!-- <img src="../static/img/img-estrela.jpg" alt="">
+                                <!-- <img src="../static/img/img-estrela.jpg" alt="">
                                <span>Salvar nos favoritos</span>  -->
-                               <span class="btn-setting">agendar um</span>
+                                <span class="btn-setting">agendar um</span>
                             </div>
                         </div>
                     </div>
@@ -123,7 +125,8 @@
                             </div>
 
                             <div class="style-normal conteiner-pesquisa--iten-info--promocao">
-                                <p>Promoçao: <span class="promo"><span class="corte" style="text-decoration: line-through">R$3,50</span> por R$3,00</span></p>
+                                <p>Promoçao: <span class="promo"><span class="corte"
+                                            style="text-decoration: line-through">R$3,50</span> por R$3,00</span></p>
                             </div>
 
                             <div class="style-normal conteiner-pesquisa--iten-info--setting">
@@ -131,12 +134,12 @@
                                     <img src="../static/img/img-estrela.jpg" alt="">
                                     <span>Salvar nos favoritos</span>
                                 </div>
-                               <span class="btn-setting">agendar um</span>
+                                <span class="btn-setting">agendar um</span>
                             </div>
                         </div>
                     </div>
 
-                    
+
                     <div class="conteiner-pesquisa--iten">
                         <div class="conteiner-pesquisa--img">
                             <img src="../static/img/rfrí.jpeg" alt="">
@@ -161,13 +164,45 @@
                                     <img src="../static/img/img-estrela.jpg" alt="">
                                     <span>Salvar nos favoritos</span>
                                 </div>
-                               <span class="btn-setting">agendar um</span>
+                                <span class="btn-setting">agendar um</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <br>
+                <div class="aviso">
+                    <h1>Produtos disponíveis</h1>
+                </div>
+                <section id="produtos">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Mercado</th>
+                                <th scope="col">Salvar na lista de compras</th>
+                            </tr>
+                            {% for produto in prod_disponiveis %}
+                            <tr>
+                                <td>{{ produto.nome_produto }}</td>
+                                <td>{{ produto.preco }}</td>
+                                <td>{{ produto.lojista.nome }}</td>
+                                <td>
+                                    <button class="" >Incluir na Lista</button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- <th></th> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+    </main>
+    </div>
+    </section>
     </main>
 
     <footer>
@@ -178,48 +213,49 @@
                         <img src="./static/img/carrinho-compras.png" alt="icone de um carrinho de compras" />
                         <span>Meu Mercado</span>
                     </div>
-                      <ul class="social">
+                    <ul class="social">
                         <li><a href="#"><img src="../static/img/icon-facebook.svg" alt="icone facebook"></a></li>
                         <li><a href="#"><img src="../static/img/icon-twitter.svg" alt="icone twitter"></a></li>
                         <li><a href="#"><img src="../static/img/icon-instagram.svg" alt="icone instagram"></a></li>
-                      </ul>
+                    </ul>
                 </div>
-    
-                <div class="conteiner-about">
-                  <div class="conteiner-list">
-                    <div class="conteiner-list-items one">
-                      <ul>
-                        <h3>Menu</h3>
-                        <li><a href="{{ url_for('index') }}">Menu principal</a></li>
-                        <li>Lista de Mercados</li>
-                        <li>Produtos</li>
-                      </ul>
-                    </div>
 
-                    <div class="conteiner-list-items two">
-                      
-                      <ul>
-                        <h3>Outro Produtos</h3>
-                        <li>Produtos do açouge</li>
-                        <li>Produtos da Padaria</li>
-                        <li>Produtos Congelados</li>
-                      </ul>
+                <div class="conteiner-about">
+                    <div class="conteiner-list">
+                        <div class="conteiner-list-items one">
+                            <ul>
+                                <h3>Menu</h3>
+                                <li><a href="{{ url_for('index') }}">Menu principal</a></li>
+                                <li>Lista de Mercados</li>
+                                <li>Produtos</li>
+                            </ul>
+                        </div>
+
+                        <div class="conteiner-list-items two">
+
+                            <ul>
+                                <h3>Outro Produtos</h3>
+                                <li>Produtos do açouge</li>
+                                <li>Produtos da Padaria</li>
+                                <li>Produtos Congelados</li>
+                            </ul>
+                        </div>
+
+                        <div class="conteiner-list-items three">
+
+                            <ul>
+                                <h3>Links sobre nós</h3>
+                                <li>Sobre Nós</li>
+                                <li>Comunidades</li>
+                                <li>Politica e privacidade</li>
+                            </ul>
+                        </div>
                     </div>
-        
-                    <div class="conteiner-list-items three">
-                      
-                      <ul>
-                        <h3>Links sobre nós</h3>
-                        <li>Sobre Nós</li>
-                        <li>Comunidades</li>
-                        <li>Politica e privacidade</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
             </div>
         </div>
     </footer>
     <script src="{{ url_for('static', filename='js/scriptPesquisa.js') }}"></script>
 </body>
+
 </html>

@@ -53,8 +53,8 @@ class User(db.Model, UserMixin):
     dt_criacao = db.Column(db.DateTime, default=datetime.utcnow)
     cep = db.Column(db.Integer, nullable = False)
     tipo_user = db.Column(db.Integer, nullable = False)
-    prod_lojista = db.relationship('Produto')
-    prod_carrinho = db.relationship('Carrinho')
+    prod_lojista = db.relationship('Produto', backref='lojista')
+    prod_carrinho = db.relationship('Carrinho', backref='cliente')
 
     def __repr__(self):
         return '<ID %r>' % self.id
@@ -189,7 +189,9 @@ def pesquisa():
     nomecompleto = username.split()
     nome = nomecompleto[0]
 
-    return render_template('pesquisa.html', user=current_user, nome=nome)
+    prod_disponiveis = Produto.query.order_by(Produto.nome_produto).all()
+
+    return render_template('pesquisa.html', user=current_user, nome=nome, prod_disponiveis=prod_disponiveis)
 
 @app.route('/estoque', methods=['POST','GET'])
 @login_required

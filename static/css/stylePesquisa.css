@@ -228,6 +228,83 @@ header {
     cursor: pointer;
 }
 
+table {
+    border-collapse: collapse;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+  
+  .table th{
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered thead th  {
+    border-bottom-width: 2px;
+  }
+  
+  .table-borderless th,
+  .table-borderless thead th {
+    border: 0;
+  }
+  
+  .table-dark {
+    color: #fff;
+    background-color: #343a40;
+  }
+  
+  .table-dark th,
+  .table-dark thead th {
+    border-color: #454d55;
+  }
+  
+  .table-dark.table-bordered {
+    border: 0;
+  }
+  
+  .table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .table-dark.table-hover tbody tr:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.075);
+  }
+  
+  
+  th {
+    text-align: center;
+  }
+  
+  td {
+    text-align: center; 
+    padding: 0.75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
+  }
+
 footer {
     background-color: rgba(72, 123, 54, 1.0);
 /*    height: 260px;*/
