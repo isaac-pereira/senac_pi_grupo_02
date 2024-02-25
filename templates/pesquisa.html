@@ -74,6 +74,18 @@
     <main>
         <section id="part-pesquisa">
             <div class="conteiner">
+                <div>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
                 <div class="aviso">
                     <h1>Promoções da Semana</h1>
                 </div>
@@ -182,24 +194,26 @@
                                 <th scope="col">Mercado</th>
                                 <th scope="col">Salvar na lista de compras</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             {% for produto in prod_disponiveis %}
                             <tr>
                                 <td>{{ produto.nome_produto }}</td>
                                 <td>{{ produto.preco }}</td>
                                 <td>{{ produto.lojista.nome }}</td>
                                 <td>
-                                    <button class="" >Incluir na Lista</button>
+                                    <form method="POST">
+                                        {{ form_inclui.hidden_tag() }}  
+                                        <input id="product_id" name="product_id" type="hidden" value="{{ produto.id }}">
+                                        {{ form_inclui.submit() }}
+                                    </form>
                                 </td>
                             </tr>
                             {% endfor %}
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- <th></th> -->
-                            </tr>
                         </tbody>
                     </table>
                 </section>
+
     </main>
     </div>
     </section>

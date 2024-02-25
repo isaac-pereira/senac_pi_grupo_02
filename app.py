@@ -118,7 +118,9 @@ class ProductForm(FlaskForm):
     submit = SubmitField('Confirmar')
 
 # Adiciona Produto no Carrinho/Lista de Compras - Cliente/Consumidor
-
+class IncluiNoCarrinho(FlaskForm):
+    product_id = IntegerField()
+    submit = SubmitField('Incluir na lista')
 
 ## Roteamento do flask (direciona para as devidas páginas html)
 
@@ -191,7 +193,15 @@ def pesquisa():
 
     prod_disponiveis = Produto.query.order_by(Produto.nome_produto).all()
 
-    return render_template('pesquisa.html', user=current_user, nome=nome, prod_disponiveis=prod_disponiveis)
+    form_inclui = IncluiNoCarrinho()
+
+    if form_inclui.validate_on_submit():
+        novo_carrinho = Carrinho(product_id=form_inclui.product_id.data, user_id=current_user.id)
+        db.session.add(novo_carrinho)
+        db.session.commit()
+        flash('Produto incluído no carrinho com sucesso!')
+
+    return render_template('pesquisa.html', user=current_user, nome=nome, prod_disponiveis=prod_disponiveis, form_inclui=form_inclui)
 
 @app.route('/estoque', methods=['POST','GET'])
 @login_required
@@ -218,7 +228,6 @@ def adiciona_produto():
 
     if form.validate_on_submit():
         novo_produto = Produto(nome_produto=form.nome_produto.data, preco=form.preco.data, vencimento=form.vencimento.data, quantidade=form.quantidade.data, lojista_id=current_user.id)
-        print(novo_produto)
         db.session.add(novo_produto)
         db.session.commit()
     return render_template('AdicionarProduto.html', user=current_user, nome=nome, form=form)

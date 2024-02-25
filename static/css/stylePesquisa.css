@@ -384,6 +384,33 @@ footer {
     font-size: 1.5rem;
 }
 
+/* Caixa de mensagem de alerta */
+.alert {
+    padding: 20px;
+    background-color: darkblue;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Botão de fechar do alerta */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Mouseover do botão de fechar do alerta */
+  .closebtn:hover {
+    color: black;
+  }
+
 @media (max-width: 1066px) {
     .menu .logo img {
         margin-right: 10px;
