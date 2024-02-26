@@ -45,7 +45,7 @@
 							<td>{{ prod.nome_produto }}</td>
 							<td>{{ prod.preco }}</td>
 							<td>{{ prod.vencimento }}</td>
-							<td>{{ user.nome }}</td>
+							<td>{{ prod.lojista.nome }}</td>
 							<td>
 								<button type="button" class="btn-close" onClick="deleteItem({{ cart.id }})"><span aria-hidden="true">&times;</span></button>
 							</td>
