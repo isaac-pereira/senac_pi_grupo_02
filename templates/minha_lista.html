@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/styleEstoque.css') }}">
+	<title>Minha Lista</title>
+</head>
+<body>
+		<header class="header">
+			<div class="conteiner">
+				<div class="menu">
+					<div class="logo">
+						<img src="../static/img/img-carrinho-compras.png">
+						<span>Meu Mercao</span>
+					</div>
+					<nav id="menuMain">
+						<ul id="list-main">
+							<li><a href="{{ url_for('pesquisa') }}">Continuar comprando</a></li>
+							<li><a href="{{ url_for('logout') }}">Logout</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			
+			<section id="nome">
+				<h1>Minha Lista de Produtos</h1>
+			</section>
+
+			<section id="produtos">
+				<table class="table table-bordered table-striped">
+			        <thead class="thead-dark">
+			            <tr>
+			                <th scope="col">Produto</th>
+			                <th scope="col">Preço</th>
+			                <th scope="col">Oferta válida até</th>
+			                <th scope="col">Mercado</th>
+			                <th scope="col">Remover</th>
+			            </tr>
+						{% for cart, user, prod in carrinho %}
+						<tr>
+							<td>{{ prod.nome_produto }}</td>
+							<td>{{ prod.preco }}</td>
+							<td>{{ prod.vencimento }}</td>
+							<td>{{ user.nome }}</td>
+							<td>
+								<button type="button" class="btn-close" onClick="deleteItem({{ cart.id }})"><span aria-hidden="true">&times;</span></button>
+							</td>
+						</tr>
+						{% endfor %}
+			        </thead>
+			        <tbody>
+			        	<tr>
+			        		<!-- <th></th> -->
+			        	</tr>
+			        </tbody>
+   	 			</table>
+			</section>
+		</main>
+
+		<script src="{{ url_for('static', filename='js/EstoqueVirtualScript.js') }}"></script>
+		
+		<script type="text/javascript">
+			function deleteItem(cartId) {
+				fetch("/delete-item", {
+					method: "POST",
+					body: JSON.stringify({ cartId: cartId }),
+				}).then((_res) => {
+					window.location.href = "/minha_lista";
+				});
+			}
+		</script>
+</body>
+</html>

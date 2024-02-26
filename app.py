@@ -232,6 +232,19 @@ def adiciona_produto():
         db.session.commit()
     return render_template('AdicionarProduto.html', user=current_user, nome=nome, form=form)
 
+@app.route('/minha_lista', methods=['POST','GET'])
+@login_required
+def minha_lista():
+    user_id = int(current_user.get_id())
+    user = User.query.filter_by(id=user_id).first()
+    username = user.nome
+    nomecompleto = username.split()
+    nome = nomecompleto[0]
+
+    carrinho = db.session.query(Carrinho, User, Produto).filter(Carrinho.user_id == User.id).filter(Carrinho.product_id == Produto.id).all()
+
+    return render_template('minha_lista.html', user=current_user, nome=nome, carrinho=carrinho)
+
 @app.route('/delete-produto', methods=['POST'])
 def delete_produto():  
     produto = json.loads(request.data)
@@ -240,6 +253,18 @@ def delete_produto():
     if produto:
         if produto.lojista_id == current_user.id:
             db.session.delete(produto)
+            db.session.commit()
+
+    return jsonify({})
+
+@app.route('/delete-item', methods=['POST'])
+def delete_item():  
+    item = json.loads(request.data)
+    itemId = item['cartId']
+    carrinho = Carrinho.query.get(itemId)
+    if carrinho:
+        if carrinho.user_id == current_user.id:
+            db.session.delete(carrinho)
             db.session.commit()
 
     return jsonify({})
