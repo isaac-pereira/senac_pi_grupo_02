@@ -63,10 +63,10 @@ if __name__ == "__main__":
 ### Funcionalidades:
 <p>O aplicativo web apresenta as seguintes funcionalidades implementadas:</p>
 <ul>
-    <li>Cadastramento de usuário.</li><br>
+    <li>Cadastramento de usuários clientes/consumidores e supermercados.</li><br>
     <li>Criação de senha com criptografia.</li><br>
     <li>Login/logout de usuário.</li><br>
-    <li>Mensagens de erro/aviso, informando quando um e-mail e/ou CPF já existe na base de dados de cadastro (regra: não é permitido o registro de um mesmo e-mail/CPF mais de uma vez).</li><br>
-    <li>Mensagens de erro/aviso, informando quando um usuário e/ou senha não confere com os registros do banco de dados.</li><br>
     <li>Páginas Html com navegação (roteamento), estilizadas com CSS e interação com JavaScript.</li><br>
+    <li>Inclusão de produtos para os supermercados e visualização das informações do estoque.</li><br>
+    <li>Para o cliente/consumidor: visualização de produtos disponíveis nos supermercado, inclusão e exclusão de produtos da "Minha Lista".</li><br>
 </ul>
